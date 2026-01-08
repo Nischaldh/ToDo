@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs"
 import prisma from "../lib/prisma.js";
 import { generateToken } from "../lib/jwt.js";
-import { ENV } from "../lib/env.js";
+import { ENV } from "../lib/ENV.js";
 
 export const signup = async (req, res) => {
     try {
