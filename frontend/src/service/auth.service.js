@@ -14,7 +14,11 @@ const authService = {
     },
 
     editProfile(data) {
-        return api.put("/api/user/edit", data);
+        return api.put("/api/user/edit", data,{
+            headers: {
+                withCredentials: true,
+            },
+        });
     },
 
     uploadProfile(file) {
@@ -30,10 +34,18 @@ const authService = {
     },
 
     changePassword(data) {
-        return api.put("/api/user/change-password", data);
+        return api.put("/api/user/change-password", data,{
+            headers: {
+                withCredentials: true,
+            },
+        });
     },
       getMe() {
-    return api.get("/api/user/me");
+    return api.get("/api/user/me",{
+        headers: {
+            withCredentials: true,
+        },
+    });
   },
 }
 export default authService;
